@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta charset="UTF=8">
-    </head>
-   <body>
-    <p><a href="../index.html">hello world</a></p>
-    <h1>受付システム</h1>
-    <p>受付システムは総会において入場者や票数を管理・カウントするシステム</p>
-    <p>ここに書くのは主に受付システムのセットアップのやり方と委任状についてだが、実際にソースコードを見てどのように内部で動いているのかを見られるとなおいいね。なお25頭はあんまり理解してないよ。</p>
-    <h2>委任状について</h2>
-    <p>これは第74回総会後からシステムに振ってきた仕事であり、今まではなぜか誘導がやっていた。25頭も初めてでよくわからない。これはどのシステムの仕事にも言えることだが、先輩のやり方を踏襲しないで自己流でやっても事故らないなら全部自己流でやってもいい。そのことを念頭に置いたうえで25頭がやっていた方法を残しておく。</p>
-    <h3>1.委任状フォームの作成</h3>
-    <p>coming soon</p>
-    <h3>2.学友会員名簿・委任状データの整形</h3>
-    <p>正味これはやり方なんでもいい。所定の形にデータが正しく整形できれば何でのいい。25頭は24頭から受け継いだスプシ(GAS)があったけど使い方がよくわからず使っていない。</p>
-    <h3>3.受付システムのセットアップ</h3>
-    <p>(デモ)総会を作ってデータを入れるだけ。</p>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引き継ぎ書くことメモ - 受付システム</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
 
-   </body>
-   </html>
+    <nav>
+        <h1>引き継ぎ資料</h1>
+        <ul>
+            <li><a href="../index.html">全体の流れ</a></li>
+            <li><a href="index.html" class="active">受付システム</a></li>
+            <li><a href="../kokuban/index.html">黒板システム</a></li>
+            <li><a href="../gityou/index.html">議長システム</a></li>
+            <li><a href="../hp/index.html">HP関連</a></li>
+            <li><a href="../other/index.html">その他</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 class="page-title">受付システムについて</h1>
+        
+        <div class="note-box">
+            <strong>【注意】</strong>受付システムは<strong>公聴会では使用しません。</strong>
+        </div>
+
+        <p>受付システムは「議長委任票数」「個人委任票数」「場内票数」を管理するシステムです。運用にあたり、議長からもらった「学友会員名簿」と「委任状データ」を指定の形に整える必要があります。</p>
+        
+        <p>データは正しい形に出来さえすれば、加工の方法は何でも構いません。なお、25頭はGoogle Spreadsheetの挙動（または信頼性）を考慮し、データ加工は基本的にローカルの <strong>Excel</strong> を使用して行っていました。</p>
+
+        <h2>大まかな手順</h2>
+        <ol>
+            <li><strong>名簿のフィルタリング：</strong><br>委任状フォームは学友会員以外のユーザーも送信してくるケースがあるため、学友会員ではない人が送ってきたデータを削除する。（＝有効な委任データだけを残す）</li>
+            <li><strong>データの整形：</strong><br>議長委任のデータと個人委任のデータを、システムが指定する所定の形に整える。</li>
+            <li><strong>CSVファイルの作成：</strong><br>整形したデータをGoogle Spreadsheet等にコピー&ペーストし、CSVファイルとしてエクスポートする。</li>
+            <li><strong>システムへの取り込み：</strong><br>受付システム上で該当の「総会」を作成し、作成したCSVデータを投入する。</li>
+        </ol>
+
+        <h2 style="margin-top: 40px;">委任状について</h2>
+        <div class="coming-soon">coming soon</div>
+    </main>
+
+</body>
+</html>
